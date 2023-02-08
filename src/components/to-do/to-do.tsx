@@ -1,22 +1,28 @@
 import { Box, TextInput } from "@mantine/core"
-import React from "react"
-import { SubmitHandler, useForm } from "react-hook-form"
+import React, { ChangeEvent, FormEvent, useState } from "react"
 
 import styles from "./to-do.module.scss"
 
-interface Input {
-    todo: string
-}
-
 const ToDoComponent = () => {
-    const { register, handleSubmit } = useForm<Input>();
-    const submit: SubmitHandler<Input> = (data) => {
-        console.log(data);
+    // const [tasks, setTasks] = useState<string[]>([]);
+    const [task, setTask] = useState<string>("");
+    // const submit = (event) => {
+    //     setTask(event.todo);
+    //     console.log(tasks);
+    // }
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setTask(e.target.value);
+    }
+
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault();
+        setTask("");
     }
     return (
         <Box className={styles.mainContainer}>
-            <form onSubmit={handleSubmit(submit)} className={styles.formContainer}>
-                <TextInput label="What To-Do?" {...register("todo", { required: true, maxLength: 70 })} />
+            <form onSubmit={handleSubmit} className={styles.formContainer}>
+                <TextInput label="What To-Do?" value={task} onChange={handleChange} />
             </form>
         </Box>
     )
