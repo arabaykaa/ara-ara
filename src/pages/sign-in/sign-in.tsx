@@ -1,7 +1,7 @@
-import React from 'react'
-import { Box, Center, Paper, TextInput, Button, Text, PasswordInput } from '@mantine/core'
+import React from "react"
+import { Box, Center, Paper, TextInput, Button, Text, PasswordInput } from "@mantine/core"
 import styles from "./sign-in.module.scss"
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { useForm, SubmitHandler } from "react-hook-form"
 
 interface IFormInput {
     name: string;

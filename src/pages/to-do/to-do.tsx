@@ -1,8 +1,9 @@
-import React from 'react'
+import React from "react"
+import { ToDoComponent } from "../../components"
 
 function ToDo() {
     return (
-        <div>ToDo</div>
+        <ToDoComponent />
     )
 }
 
