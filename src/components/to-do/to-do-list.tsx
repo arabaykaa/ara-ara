@@ -1,4 +1,4 @@
-import { Box, Text } from "@mantine/core"
+import { Paper, Text } from "@mantine/core"
 import React from "react"
 
 interface IProps {
@@ -7,11 +7,11 @@ interface IProps {
 
 const ToDoList = (props: IProps) => {
     return (
-        <Box>
+        <Paper shadow="md" radius="md" p="xs" withBorder sx={{ background: "gray" }}>
             <Text>
                 {props.text}
             </Text>
-        </Box>
+        </Paper>
     )
 }
 
