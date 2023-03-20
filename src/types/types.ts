@@ -5,3 +5,9 @@ export interface ICardData {
   text: string;
   path: string;
 }
+
+export interface IToDo {
+  id: number;
+  text: string;
+  status?: boolean;
+}

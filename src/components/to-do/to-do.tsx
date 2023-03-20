@@ -1,21 +1,13 @@
 import { Grid, TextInput } from "@mantine/core"
 import React, { ChangeEvent, FormEvent, useState } from "react"
 import ToDoList from "./to-do-list";
+import { IToDo } from "../../types/types";
 
-import styles from "./to-do.module.scss"
-
-interface IToDo {
-    text: string;
-    id: number;
-}
+import styles from "../components.module.scss"
 
 const ToDoComponent = () => {
-    const [tasks, setTasks] = useState<string[]>([]);
+    const [tasks, setTasks] = useState<IToDo[]>([]);
     const [task, setTask] = useState<string>("");
-    // const submit = (event) => {
-    //     setTask(event.todo);
-    //     console.log(tasks);
-    // }
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setTask(e.target.value);
@@ -23,23 +15,23 @@ const ToDoComponent = () => {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        setTask("");
+        if (task.trim().length > 0) {
+            setTasks(prev => [...prev, { id: Math.floor(Math.random() * 1000), text: task.trim() }]);
+            setTask("");
+        }
     }
     return (
         <Grid sx={{ width: "100%", display: "flex", alignItems: "center", flexDirection: "column" }}>
             <Grid.Col xs={12} md={6} lg={5} sx={{ width: "100%" }}>
-                <form onSubmit={handleSubmit} className={styles.formContainer}>
+                <form onSubmit={handleSubmit} className={styles.todo__form_ontainer}>
                     <TextInput label="What To-Do?" value={task} onChange={handleChange} />
                 </form>
             </Grid.Col>
             {tasks.map((items) => (
-                <Grid.Col key={items} xs={12} md={6} lg={5} sx={{ width: "100%" }}>
-                    <ToDoList text="Walk with dog" />
+                <Grid.Col key={items.id} xs={12} md={6} lg={5} sx={{ width: "100%" }}>
+                    <ToDoList text={items.text} />
                 </Grid.Col>
             ))}
-            <Grid.Col xs={12} md={6} lg={5} sx={{ width: "100%" }}>
-                <ToDoList text="Walk with dog" />
-            </Grid.Col>
         </Grid>
     )
 }

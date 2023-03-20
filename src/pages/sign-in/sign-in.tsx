@@ -15,7 +15,7 @@ function SignIn() {
     }
 
     return (
-        <Center className={styles.mainContainer}>
+        <Center className={styles.main__container}>
             <Paper className={styles.signInContainer} shadow="xl">
                 <Center className={styles.signInBox}>
                     <Box className={styles.logInContainer}>

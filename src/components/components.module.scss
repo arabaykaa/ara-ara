@@ -1,0 +1,32 @@
+.header__title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.header__links {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 18px;
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+//not used at the moment
+//=======================
+.todo__main_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+//=======================
+
+.todo__form_ontainer {
+  width: 100%;
+  margin-bottom: 1rem;
+}

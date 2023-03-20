@@ -1,18 +1,19 @@
 import React from "react"
 import { Box, Button, Center } from "@mantine/core"
-import styles from "./header.module.scss"
 import { DarkLightTheme } from "../index"
 import { NavlinkComponent } from "../../hooks"
+
+import styles from "../components.module.scss"
 
 function HeaderComponent() {
     return (
         <Center sx={{ display: "flex", height: "100%", alignItems: "center" }}>
             <Box sx={{ width: "30%" }}>
-                <h1 className={styles.title}>
+                <h1 className={styles.header__title}>
                     araara
                 </h1>
             </Box>
-            <ul className={styles.links}>
+            <ul className={styles.header__links}>
                 <li><NavlinkComponent to={"/"}>main</NavlinkComponent></li>
                 <li><NavlinkComponent to={"/work"}>my work</NavlinkComponent></li>
                 <li><NavlinkComponent to={"/chat"}>chat</NavlinkComponent></li>

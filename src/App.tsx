@@ -1,9 +1,7 @@
 import { AppShell, ColorScheme, ColorSchemeProvider, Header, MantineProvider } from "@mantine/core";
 import { useLocalStorage, useHotkeys } from "@mantine/hooks";
 import { Route, Routes } from "react-router-dom";
-
 // import SignIn from './pages/sign-in/sign-in';
-
 import React from "react";
 import { AboutMe, Chat, MainPage, MyWork, ToDo } from "./pages";
 import { FooterComponent, HeaderComponent } from "./components";
@@ -20,7 +18,7 @@ function App() {
   return (
     <>
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-        <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
+        <MantineProvider theme={{ colorScheme }} withCSSVariables withGlobalStyles withNormalizeCSS>
           <AppShell padding="md"
             header={
               <Header height={60} p="xs">
