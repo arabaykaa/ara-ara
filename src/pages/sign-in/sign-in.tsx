@@ -7,8 +7,11 @@ interface IFormInput {
     name: string;
     password: string;
 }
+interface IProps {
+    setLogin: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-function SignIn() {
+function SignIn({ setLogin }: IProps) {
     const { register, handleSubmit } = useForm<IFormInput>();
     const onSubmitForm: SubmitHandler<IFormInput> = (data) => {
         console.log(data);
@@ -25,7 +28,8 @@ function SignIn() {
                                 {...register("name", { required: true, maxLength: 20 })} />
                             <PasswordInput placeholder='password' variant='default' size='md' sx={{ marginBottom: "20px", width: "80%" }}
                                 {...register("password", { required: true, maxLength: 20 })} />
-                            <Button sx={{ width: "60%", backgroundColor: "#181D31" }} type="submit">submit</Button>
+                            <Button onClick={() => setLogin((prev) => prev === !prev)}
+                                sx={{ width: "60%", backgroundColor: "#181D31" }} type="submit">submit</Button>
                         </form>
                     </Box>
                 </Center>
