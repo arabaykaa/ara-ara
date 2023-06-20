@@ -1,11 +1,15 @@
-import React from "react"
 import { Box, Button, Center } from "@mantine/core"
-import { DarkLightTheme } from "../index"
 import { NavlinkComponent } from "../../hooks"
+import { DarkLightTheme } from "../index"
+import React from "react"
 
 import styles from "../components.module.scss"
 
-function HeaderComponent() {
+interface IProps {
+    setLogin: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+function HeaderComponent({ setLogin }: IProps) {
     return (
         <Center sx={{ display: "flex", height: "100%", alignItems: "center" }}>
             <Box sx={{ width: "30%" }}>
@@ -22,7 +26,7 @@ function HeaderComponent() {
             </ul>
             <Box sx={{ width: "20%", display: "flex", justifyContent: "flex-end", gap: "20px" }}>
                 <DarkLightTheme />
-                <Button compact color="gray">
+                <Button compact color="gray" onClick={() => setLogin(false)}>
                     logout
                 </Button>
             </Box>

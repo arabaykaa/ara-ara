@@ -1,7 +1,7 @@
-import React from "react"
 import { Box, Center, Paper, TextInput, Button, Text, PasswordInput } from "@mantine/core"
-import styles from "./sign-in.module.scss"
 import { useForm, SubmitHandler } from "react-hook-form"
+import styles from "./sign-in.module.scss"
+import React from "react"
 
 interface IFormInput {
     name: string;
@@ -14,7 +14,9 @@ interface IProps {
 function SignIn({ setLogin }: IProps) {
     const { register, handleSubmit } = useForm<IFormInput>();
     const onSubmitForm: SubmitHandler<IFormInput> = (data) => {
-        console.log(data);
+        if (data.name === "admin" && data.password === "123") {
+            setLogin(true)
+        }
     }
 
     return (
@@ -28,8 +30,7 @@ function SignIn({ setLogin }: IProps) {
                                 {...register("name", { required: true, maxLength: 20 })} />
                             <PasswordInput placeholder='password' variant='default' size='md' sx={{ marginBottom: "20px", width: "80%" }}
                                 {...register("password", { required: true, maxLength: 20 })} />
-                            <Button onClick={() => setLogin((prev) => prev === !prev)}
-                                sx={{ width: "60%", backgroundColor: "#181D31" }} type="submit">submit</Button>
+                            <Button sx={{ width: "60%", backgroundColor: "#181D31" }} type="submit">submit</Button>
                         </form>
                     </Box>
                 </Center>

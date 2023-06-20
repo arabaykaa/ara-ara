@@ -25,7 +25,7 @@ function App() {
             <AppShell padding="md"
               header={
                 <Header height={60} p="xs">
-                  <HeaderComponent />
+                  <HeaderComponent setLogin={setLogin} />
                 </Header>}>
               <main style={{ minHeight: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <Routes>
