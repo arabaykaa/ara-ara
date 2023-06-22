@@ -1,13 +1,13 @@
-export interface ICardData {
+declare type CardDataType = {
   src: string;
   alt: string;
   title: string;
   text: string;
   path: string;
-}
+};
 
-export interface IToDo {
+declare type ToDoType = {
   id: number;
   text: string;
   status?: boolean;
-}
+};

@@ -1,12 +1,11 @@
 import { Grid, TextInput } from "@mantine/core"
 import React, { ChangeEvent, FormEvent, useState } from "react"
 import ToDoList from "./to-do-list";
-import { IToDo } from "../../types/types";
 
 import styles from "../components.module.scss"
 
 const ToDoComponent = () => {
-    const [tasks, setTasks] = useState<IToDo[]>([]);
+    const [tasks, setTasks] = useState<ToDoType[]>([]);
     const [task, setTask] = useState<string>("");
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

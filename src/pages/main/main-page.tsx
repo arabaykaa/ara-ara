@@ -3,12 +3,12 @@ import { Box, Grid } from "@mantine/core"
 import styles from "./main.module.scss"
 import { CardComponent } from "../../components/elements/index"
 import { ICardData } from "../../types/types"
-import { myWork, chat, ToDoImg, aboutMe } from "../../assets/image"
+import { articles, chat, ToDoImg, aboutMe } from "../../assets/image"
 
 
 const cardsData: ICardData[] = [
     {
-        src: myWork,
+        src: articles,
         alt: "my work",
         title: "my work",
         text: "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",

@@ -19,7 +19,7 @@ function HeaderComponent({ setLogin }: IProps) {
             </Box>
             <ul className={styles.header__links}>
                 <li><NavlinkComponent to={"/"}>main</NavlinkComponent></li>
-                <li><NavlinkComponent to={"/work"}>my work</NavlinkComponent></li>
+                <li><NavlinkComponent to={"/articles"}>articles</NavlinkComponent></li>
                 <li><NavlinkComponent to={"/chat"}>chat</NavlinkComponent></li>
                 <li><NavlinkComponent to={"/todo"}>to-do</NavlinkComponent></li>
                 <li><NavlinkComponent to={"/about"}>about me</NavlinkComponent></li>

@@ -1,9 +1,8 @@
 import React from "react"
 import { Card, Image, Text, Badge, Button, Group } from "@mantine/core";
-import { ICardData } from "../../../types/types";
 import { NavLink } from "react-router-dom";
 
-function CardComponent(props: ICardData) {
+function CardComponent(props: CardDataType) {
     return (
         <Card shadow="sm" p="lg" radius="md" withBorder>
             <Card.Section>
