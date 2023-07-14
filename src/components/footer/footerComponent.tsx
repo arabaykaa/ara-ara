@@ -1,6 +1,5 @@
 import { Center } from "@mantine/core"
 import styles from "../components.module.scss"
-import React from "react"
 
 function FooterComponent() {
     return (

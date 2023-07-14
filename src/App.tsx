@@ -2,7 +2,7 @@ import { AppShell, ColorScheme, ColorSchemeProvider, Footer, Header, MantineProv
 import { useLocalStorage, useHotkeys } from "@mantine/hooks";
 import { Route, Routes } from "react-router-dom";
 import SignIn from "./pages/sign-in/sign-in";
-import React, { useState } from "react";
+import { useState } from "react";
 import { AboutMe, Chat, MainPage, Articles, ToDo } from "./pages";
 import { FooterComponent, HeaderComponent } from "./components";
 
@@ -23,25 +23,24 @@ function App() {
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
           <MantineProvider theme={{ colorScheme }} withCSSVariables withGlobalStyles withNormalizeCSS>
             <AppShell
-              footer={
-                <Footer height="auto" p="xs">
-                  <FooterComponent />
-                </Footer>
-              }
               header={
                 <Header height={60} p="xs">
                   <HeaderComponent setLogin={setLogin} />
-                </Header>}>
-              <main style={{ minHeight: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", paddingBottom: "0" }}>
-                <Routes>
-                  <Route path="/" element={<MainPage />} />
-                  <Route path="/articles" element={<Articles />} />
-                  <Route path="/chat" element={<Chat />} />
-                  <Route path="/todo" element={<ToDo />} />
-                  <Route path="/about" element={<AboutMe />} />
-                  <Route path="*" element={<h1>Page Not Found</h1>} />
-                </Routes>
-              </main>
+                </Header>}
+              footer={
+                <Footer height="auto" p="xs" sx={{ position: "static" }}>
+                  <FooterComponent />
+                </Footer>
+              }
+            >
+              <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/articles" element={<Articles />} />
+                <Route path="/chat" element={<Chat />} />
+                <Route path="/todo" element={<ToDo />} />
+                <Route path="/about" element={<AboutMe />} />
+                <Route path="*" element={<h1>Page Not Found</h1>} />
+              </Routes>
             </AppShell>
           </MantineProvider>
         </ColorSchemeProvider>

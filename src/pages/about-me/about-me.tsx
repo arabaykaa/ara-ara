@@ -1,4 +1,3 @@
-import React from "react"
 import { Box, Paper } from "@mantine/core"
 import styles from "./about-me.module.scss"
 

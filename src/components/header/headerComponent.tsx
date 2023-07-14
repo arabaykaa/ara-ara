@@ -1,7 +1,7 @@
+import React from "react"
 import { Box, Button, Center } from "@mantine/core"
 import { NavlinkComponent } from "../../hooks"
 import { DarkLightTheme } from "../index"
-import React from "react"
 
 import styles from "../components.module.scss"
 

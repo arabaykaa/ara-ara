@@ -1,12 +1,10 @@
-import React from "react"
 import { Box, Grid } from "@mantine/core"
-import styles from "./main.module.scss"
 import { CardComponent } from "../../components/elements/index"
-import { ICardData } from "../../types/types"
 import { articles, chat, ToDoImg, aboutMe } from "../../assets/image"
+import styles from "./main.module.scss"
 
 
-const cardsData: ICardData[] = [
+const cardsData: CardDataType[] = [
     {
         src: articles,
         alt: "my work",
