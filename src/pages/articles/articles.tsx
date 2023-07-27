@@ -11,7 +11,7 @@ function Articles() {
     return (
         <Box sx={{ width: "100%", padding: "2% 10%" }}>
             {data?.map((items) => (
-                <ArticlesBlock key={items.id} title={items.title} text={items.body} />
+                <ArticlesBlock key={items.id} postid={items.id} title={items.title} text={items.body} />
             ))}
         </Box>
     )
