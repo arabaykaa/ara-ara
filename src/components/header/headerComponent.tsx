@@ -26,7 +26,10 @@ function HeaderComponent({ setLogin }: IProps) {
             </ul>
             <Box sx={{ width: "20%", display: "flex", justifyContent: "flex-end", gap: "20px" }}>
                 <DarkLightTheme />
-                <Button compact color="gray" onClick={() => setLogin(false)}>
+                <Button compact color="gray" onClick={() => {
+                    setLogin(false)
+                    localStorage.removeItem("loginState")
+                }}>
                     logout
                 </Button>
             </Box>

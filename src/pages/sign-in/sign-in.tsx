@@ -1,7 +1,8 @@
+import React from "react"
 import { Box, Center, Paper, TextInput, Button, Text, PasswordInput } from "@mantine/core"
 import { useForm, SubmitHandler } from "react-hook-form"
 import styles from "./sign-in.module.scss"
-import React from "react"
+import { toast } from "react-toastify";
 
 interface IFormInput {
     name: string;
@@ -16,6 +17,16 @@ function SignIn({ setLogin }: IProps) {
     const onSubmitForm: SubmitHandler<IFormInput> = (data) => {
         if (data.name === "admin" && data.password === "123") {
             setLogin(true)
+            toast.success("Authorized!", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
     }
 

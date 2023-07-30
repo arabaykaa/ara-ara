@@ -15,6 +15,12 @@ function App() {
   const toggleColorScheme = (value?: ColorScheme) => { setColorScheme(value || (colorScheme === "dark" ? "light" : "dark")); }
   useHotkeys([["mod+J", () => toggleColorScheme()]]);
   const [login, setLogin] = useState(false);
+  // const navigate = useNavigate()
+  // useEffect(() => {
+  //   if (!login) {
+  //     navigate("/login");
+  //   }
+  // }, [])
 
   return (
     <>
